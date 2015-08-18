@@ -9,6 +9,7 @@
 namespace Cib\Bundle\SoapBundle\Services;
 
 
+use Cib\Bundle\LicenseBundle\Entity\TokenClient;
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\Security\Csrf\CsrfTokenManager;
 
@@ -33,12 +34,20 @@ class sendClientCodeService
         $dateValidityToken = new \DateTime();
 
         if($client){
-            $csrfToken = $this->csrfTokenManager->getToken($client->getClientId.$dateValidityToken->format('Y-m-d:h'));
+            $tempCsrfToken = $this->csrfTokenManager->getToken($client->getClientId().$dateValidityToken->format('Y-m-d:h'));
+            $csrfToken = $this->csrfTokenManager->getToken($tempCsrfToken->getValue());
+            $tokenClient = new TokenClient($csrfToken->getId(),$csrfToken->getValue(),$client);
+            $tokenClient->setClient($client);
+//            $client->addTokenClient($tokenClient);
+            $this->entityManager->persist($tokenClient);
+            $this->entityManager->persist($client);
+            $this->entityManager->flush();
 
+            $this->csrfTokenManager->removeToken($client->getClientId().$dateValidityToken->format('Y-m-d:h'));
             return[
                 'status' => 0,
                 'clientName' => $client->getClientName(),
-                'clientToken' => $csrfToken,
+                'clientToken' => $csrfToken->getId(),
                 'clientId' => $client->getClientId(),
             ];
         }

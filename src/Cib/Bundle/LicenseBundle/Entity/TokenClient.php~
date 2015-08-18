@@ -1,0 +1,53 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: cedric
+ * Date: 18/08/2015
+ * Time: 12:04
+ */
+
+namespace Cib\Bundle\LicenseBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
+/**
+ * Class TokenClient
+ * @package Cib\Bundle\LicenseBundle\Entity
+ *
+ * @ORM\Table(name="tokenClient")
+ * @ORM\Entity(repositoryClass="Cib\Bundle\LicenseBundle\Entity\TokenClientRepository")
+ */
+class TokenClient
+{
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="client_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $tokenClientId;
+
+    /**
+     * @ORM\Column(name="token_id", type="string")
+     */
+    private $tokenId;
+
+    /**
+     * @ORM\Column(name="token_value", type="string")
+     */
+    private $tokenValue;
+
+    /**
+     * @ORM\Column(name="token_date", type="datetime")
+     */
+    private $tokenDate;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Client", cascade="persist")
+     * @ORM\JoinColumn(name="client_id", referencedColumnName="client_id")
+     */
+    private $client;
+}

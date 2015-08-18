@@ -51,6 +51,11 @@ class Client
     private $tpe;
 
     /**
+     * @ORM\OneToMany(targetEntity="TokenClient", mappedBy="client")
+     */
+    private $tokenClient;
+
+    /**
      * Constructor
      */
     public function __construct()
@@ -168,5 +173,39 @@ class Client
     public function getClientCode()
     {
         return $this->clientCode;
+    }
+
+
+    /**
+     * Add tokenClient
+     *
+     * @param \Cib\Bundle\LicenseBundle\Entity\TokenClient $tokenClient
+     * @return Client
+     */
+    public function addTokenClient(\Cib\Bundle\LicenseBundle\Entity\TokenClient $tokenClient)
+    {
+        $this->tokenClient[] = $tokenClient;
+
+        return $this;
+    }
+
+    /**
+     * Remove tokenClient
+     *
+     * @param \Cib\Bundle\LicenseBundle\Entity\TokenClient $tokenClient
+     */
+    public function removeTokenClient(\Cib\Bundle\LicenseBundle\Entity\TokenClient $tokenClient)
+    {
+        $this->tokenClient->removeElement($tokenClient);
+    }
+
+    /**
+     * Get tokenClient
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getTokenClient()
+    {
+        return $this->tokenClient;
     }
 }

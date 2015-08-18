@@ -14,6 +14,7 @@ use Cib\Bundle\LicenseBundle\Entity\Software;
 use Cib\Bundle\LicenseBundle\Entity\Tpe;
 use Cib\Bundle\LicenseBundle\Entity\TpeSoftware;
 use Doctrine\ORM\EntityManager;
+use Symfony\Component\Security\Csrf\CsrfToken;
 use Symfony\Component\Security\Csrf\CsrfTokenManager;
 
 class sendLicenseService
@@ -31,7 +32,7 @@ class sendLicenseService
     }
 
     public function sendLicense($numTpe,$infoSup0,$infoSup1,$infoSup2, $version, $crc, $typeTpe, $isCless, $isBt, $isGprs
-        , $idClient, $tokenClient)
+        , $idClient, $tokenId)
     {
 
         $tpe = new Tpe();
@@ -41,11 +42,11 @@ class sendLicenseService
         $client = $this->entityManager->getRepository('CibLicenseBundle:Client')
             ->find($idClient);
         if(!$client)
-            return 1;
+            return 9;
 
-        $checkToken = $this->csrfTokenManager->getToken($client->getClientId().$dateToken->format('Y-m-d:h'));
-        if($checkToken != $tokenClient)
-            return 1;
+        if($this->findToken($client,$tokenId) != true)
+            return 8;
+
 
         $softwareVersion = substr($version,6,4);
         $softwareNumber = substr($version,0, 6);
@@ -53,7 +54,7 @@ class sendLicenseService
         $software = $this->entityManager->getRepository('CibLicenseBundle:Software')
             ->findOneBy(array('softwareNumber' => $softwareNumber));
         if(!$software)
-            return 1;
+            return 7;
         else{
             $tpeSoftware->setSoftware($software);
             $tpeSoftware->setTpe($tpe);
@@ -90,4 +91,27 @@ class sendLicenseService
 
     }
 
+
+    private function findToken(Client $client, $search)
+    {
+        $date = new \DateTime();
+
+        foreach($client->getTokenClient() as $tokenClient){
+            if($tokenClient->getTokenId() == $search){
+                if($tokenClient->getTokenDate()->diff($date)->h < 1 ){
+                    $client->removeTokenClient($tokenClient);
+                    $this->entityManager->remove($tokenClient);
+                    $this->entityManager->flush();
+                    return true;
+                }
+                else{
+                    $client->removeTokenClient($tokenClient);
+                    $this->entityManager->remove($tokenClient);
+                    $this->entityManager->flush();
+                    return false;
+                }
+            }
+        }
+        return false;
+    }
 }

@@ -46,9 +46,19 @@ class Client
     private $clientCode;
 
     /**
+     * @ORM\Column(name="client_token", type="string", nullable=true)
+     */
+    private $clientToken;
+
+    /**
      * @ORM\OneToMany(targetEntity="Tpe", mappedBy="client")
      */
     private $tpe;
+
+    /**
+     * @ORM\OneToMany(targetEntity="TokenClient", mappedBy="client")
+     */
+    private $tokenClient;
 
     /**
      * Constructor
@@ -145,5 +155,51 @@ class Client
     public function getTpe()
     {
         return $this->tpe;
+    }
+
+    /**
+     * Set clientCode
+     *
+     * @param string $clientCode
+     * @return Client
+     */
+    public function setClientCode($clientCode)
+    {
+        $this->clientCode = $clientCode;
+
+        return $this;
+    }
+
+    /**
+     * Get clientCode
+     *
+     * @return string 
+     */
+    public function getClientCode()
+    {
+        return $this->clientCode;
+    }
+
+    /**
+     * Set clientToken
+     *
+     * @param string $clientToken
+     * @return Client
+     */
+    public function setClientToken($clientToken)
+    {
+        $this->clientToken = $clientToken;
+
+        return $this;
+    }
+
+    /**
+     * Get clientToken
+     *
+     * @return string 
+     */
+    public function getClientToken()
+    {
+        return $this->clientToken;
     }
 }
