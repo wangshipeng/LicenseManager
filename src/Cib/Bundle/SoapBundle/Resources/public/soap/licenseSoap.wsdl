@@ -60,7 +60,7 @@
     </service>
 
     <service name="sendClientCode_Service">
-        <documentation>WSDL File for sendLicenseService</documentation>
+        <documentation>WSDL File for sendClientCodeService</documentation>
         <port binding="tns:sendClientCode_Binding" name="sendClientCode_Port">
             <soap:address
                     location="http://license.cib-ingenierie.fr/soap/client" />

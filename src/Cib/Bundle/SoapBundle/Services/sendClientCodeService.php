@@ -38,7 +38,7 @@ class sendClientCodeService
             $csrfToken = $this->csrfTokenManager->getToken($tempCsrfToken->getValue());
             $tokenClient = new TokenClient($csrfToken->getId(),$csrfToken->getValue(),$client);
             $tokenClient->setClient($client);
-//            $client->addTokenClient($tokenClient);
+            $client->addTokenClient($tokenClient);
 
             try{
                 $this->entityManager->persist($tokenClient);
