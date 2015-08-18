@@ -99,7 +99,7 @@ knp_paginator:
 services:
     sendLicense:
         class: Cib\Bundle\SoapBundle\Services\sendLicenseService
-        arguments: [@doctrine.orm.entity_manager]
+        arguments: [@doctrine.orm.entity_manager,@security.csrf.token_manager]
     sendClientCode:
         class: Cib\Bundle\SoapBundle\Services\sendClientCodeService
-        arguments: [@doctrine.orm.entity_manager]
+        arguments: [@doctrine.orm.entity_manager,@security.csrf.token_manager]

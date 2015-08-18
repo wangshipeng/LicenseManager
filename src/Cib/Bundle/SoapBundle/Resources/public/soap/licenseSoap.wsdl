@@ -32,6 +32,8 @@
         <part name="isCless" type="xsd:integer"/>
         <part name="isBt" type="xsd:integer"/>
         <part name="isGprs" type="xsd:integer"/>
+        <part name="idClient" type="xsd:integer"/>
+        <part name="tokenClient" type="xsd:string"/>
     </message>
 
     <message name="sendLicenseResponse">
@@ -45,6 +47,8 @@
     <message name="sendClientCodeResponse">
         <part name="status" type="xsd:string"/>
         <part name="clientName" type="xsd:string"/>
+        <part name="clientToken" type="xsd:string"/>
+        <part name="clientId" type="xsd:integer"/>
     </message>
 
     <service name="sendLicense_Service">

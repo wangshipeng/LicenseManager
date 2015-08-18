@@ -14,6 +14,7 @@ use Cib\Bundle\LicenseBundle\Entity\Software;
 use Cib\Bundle\LicenseBundle\Entity\Tpe;
 use Cib\Bundle\LicenseBundle\Entity\TpeSoftware;
 use Doctrine\ORM\EntityManager;
+use Symfony\Component\Security\Csrf\CsrfTokenManager;
 
 class sendLicenseService
 {
@@ -21,18 +22,31 @@ class sendLicenseService
 
     private $entityManager;
 
-    public function __construct(EntityManager $entityManager)
+    private $csrfTokenManager;
+
+    public function __construct(EntityManager $entityManager,CsrfTokenManager $csrfTokenManager)
     {
         $this->entityManager = $entityManager;
+        $this->csrfTokenManager = $csrfTokenManager;
     }
 
-    public function sendLicense($numTpe,$infoSup0,$infoSup1,$infoSup2, $version, $crc, $typeTpe, $isCless, $isBt, $isGprs)
+    public function sendLicense($numTpe,$infoSup0,$infoSup1,$infoSup2, $version, $crc, $typeTpe, $isCless, $isBt, $isGprs
+        , $idClient, $tokenClient)
     {
 
         $tpe = new Tpe();
         //$software = new Software();
+        $dateToken = new \DateTime();
         $tpeSoftware = new TpeSoftware();
-        $client = new Client();
+        $client = $this->entityManager->getRepository('CibLicenseBundle:Client')
+            ->find($idClient);
+        if(!$client)
+            return 1;
+
+        $checkToken = $this->csrfTokenManager->getToken($client->getClientId().$dateToken->format('Y-m-d:h'));
+        if($checkToken != $tokenClient)
+            return 1;
+
         $softwareVersion = substr($version,6,4);
         $softwareNumber = substr($version,0, 6);
 
