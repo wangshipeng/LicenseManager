@@ -31,6 +31,7 @@ class sendClientCodeService
         $client = $this->entityManager->getRepository('CibLicenseBundle:Client')
             ->findOneBy(array('clientCode' => $clientCode));
 
+        var_dump('toto');die;
         $dateValidityToken = new \DateTime();
         $error = null;
         if($client){

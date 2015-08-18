@@ -73,8 +73,8 @@
       <file leaf-file-name="sendClientCodeService.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Services/sendClientCodeService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5964912">
-              <caret line="36" column="51" selection-start-line="36" selection-start-column="51" selection-end-line="36" selection-end-column="51" />
+            <state vertical-scroll-proportion="0.3524721">
+              <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
               <folding>
                 <element signature="e#134#182#0#PHP" expanded="true" />
               </folding>
@@ -1078,8 +1078,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Services/sendClientCodeService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5964912">
-          <caret line="36" column="51" selection-start-line="36" selection-start-column="51" selection-end-line="36" selection-end-column="51" />
+        <state vertical-scroll-proportion="0.3524721">
+          <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
           <folding>
             <element signature="e#134#182#0#PHP" expanded="true" />
           </folding>
