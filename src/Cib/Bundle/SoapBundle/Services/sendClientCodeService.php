@@ -34,6 +34,7 @@ class sendClientCodeService
         $dateValidityToken = new \DateTime();
         $error = null;
         if($client){
+            var_dump($client->getClientName());die;
             $tempCsrfToken = $this->csrfTokenManager->getToken($client->getClientId().$dateValidityToken->format('Y-m-d:h'));
             $csrfToken = $this->csrfTokenManager->getToken($tempCsrfToken->getValue());
             $tokenClient = new TokenClient($csrfToken->getId(),$csrfToken->getValue(),$client);
