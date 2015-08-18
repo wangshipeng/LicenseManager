@@ -1,0 +1,12 @@
+.centerText{
+    text-align: center;
+}
+
+.marginAutoLeftRight{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.marginAutoAll{
+    margin: auto;
+}

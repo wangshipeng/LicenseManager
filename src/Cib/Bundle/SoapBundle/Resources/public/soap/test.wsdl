@@ -1,0 +1,63 @@
+<definitions name="sendLicense"
+             targetNamespace="http://license.cib-ingenierie.fr/soap/test"
+             xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:tns="http://license.cib-ingenierie.fr/soap/test"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+
+    <portType name="sendLicense_PortType">
+        <operation name="sendLicense">
+            <input message="tns:sendLicenseRequest"/>
+            <output message="tns:sendLicenseResponse"/>
+        </operation>
+    </portType>
+
+    <message name="sendLicenseRequest">
+        <part name="numTpe" type="xsd:string"/>
+        <part name="infoSup0" type="xsd:string"/>
+        <part name="infoSup1" type="xsd:string"/>
+        <part name="infoSup2" type="xsd:string"/>
+        <part name="version" type="xsd:string"/>
+        <part name="crc" type="xsd:string"/>
+        <part name="typeTpe" type="xsd:string"/>
+        <part name="isCless" type="xsd:integer"/>
+        <part name="isBt" type="xsd:integer"/>
+        <part name="isGprs" type="xsd:integer"/>
+    </message>
+
+    <message name="sendLicenseResponse">
+        <part name="status" type="xsd:string"/>
+    </message>
+
+    <service name="sendLicense_Service">
+        <documentation>WSDL File for sendLicenseService</documentation>
+        <port binding="tns:sendLicense_Binding" name="sendLicense_Port">
+            <soap:address
+                    location="http://license.cib-ingenierie.fr/soap/test" />
+        </port>
+    </service>
+
+    <binding name="sendLicense_Binding" type="tns:sendLicense_PortType">
+        <soap:binding style="rpc"
+                      transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="sendLicense">
+            <soap:operation soapAction="sendLicense"/>
+            <input>
+                <soap:body
+                        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                        namespace="urn:examples:sendLicenseService"
+                        use="encoded"/>
+            </input>
+
+            <output>
+                <soap:body
+                        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                        namespace="urn:examples:sendLicenseService"
+                        use="encoded"/>
+            </output>
+        </operation>
+    </binding>
+
+</definitions>

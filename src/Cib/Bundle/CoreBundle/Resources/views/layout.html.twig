@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}CashPass{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('bundles/cibcore/bootstrap/css/bootstrap.css') }}" type="text/css" media="all"/>
+        <link rel="stylesheet" href="{{ asset('bundles/cibcore/bootstrap/css/bootstrap-theme.css') }}" type="text/css" media="all"/>
+        <link rel="stylesheet" href="{{ asset('bundles/cibcore/jquery-ui/jquery-ui.css') }}" type="text/css" media="all"/>
+        <link rel="stylesheet" href="{{ asset('bundles/cibcore/css/tableStyle.css') }}" type="text/css" media="all"/>
+        <link rel="stylesheet" href="{{ asset('bundles/cibcore/css/coreStyle.css') }}" type="text/css" media="all"/>
+        <link rel="stylesheet" href="{{ asset('bundles/cibcore/css/modalLoading.css') }}" type="text/css" media="all"/>
+        <link rel="stylesheet" href="{{ asset('bundles/cibcore/css/sumoselect.css') }}" type="text/css" media="all"/>
+    {% endblock %}
+
+
+
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+
+
+
+    {#{% include 'CibCoreBundle:Menu:menu.html.twig' %}#}
+<div class="container" style="min-height: 800px">
+{% block body %}
+
+{% endblock %}
+    {% block javascript %}
+        <script src="{{ asset('bundles/cibcore/jquery/jquery.js') }}"></script>
+        <script src="{{ asset('bundles/cibcore/sumoselect.js') }}"></script>
+        <script src="{{ asset('bundles/cibcore/jquery-ui/jquery-ui.js') }}"></script>
+        <script src="{{ asset('bundles/cibcore/bootstrap/js/bootstrap.js') }}"></script>
+        <script src="{{ asset('bundles/cibcore/fct.js') }}"></script>
+        <script src="{{ asset('bundles/cibcore/underscore.min.js') }}"></script>
+        {#{% if client is defined %}#}
+        {#<script src="{{ asset('bundles/cibcustomer/formClient.js') }}"></script>#}
+        {#{% endif %}#}
+        {#{% if results is defined %}#}
+            {#<script src="{{ asset('bundles/cibdata/formResults.js') }}"></script>#}
+        {#{% endif %}#}
+        {#{% if compensation is defined %}#}
+            {#<script src="{{ asset('bundles/cibdata/formEnclose.js') }}"></script>#}
+        {#{% endif %}#}
+        {#{% if store is defined %}#}
+            {#<script src="{{ asset('bundles/cibactivity/formStore.js') }}"></script>#}
+        {#{% endif %}#}
+        {#{% if billings is defined %}#}
+            {#<script src="{{ asset('bundles/cibdata/formBilling.js') }}"></script>#}
+        {#{% endif %}#}
+        {#{% if greenFee is defined %}#}
+            {#<script src="{{ asset('bundles/cibdata/formGreenFee.js') }}"></script>#}
+        {#{% endif %}#}
+    {% endblock %}
+
+</div>
+{#<div class="row">#}
+    {#<div class="container">#}
+        {#<div class="col-md-offset-1 col-md-3">#}
+            {#<ul class="list-unstyled" >#}
+                {#<li>lien</li>#}
+                {#<li>lien</li>#}
+                {#<li>lien</li>#}
+                {#<li>lien</li>#}
+            {#</ul>#}
+        {#</div>#}
+        {#<div class="col-md-offset-1 col-md-3">#}
+            {#<ul class="list-unstyled">#}
+                {#<li>lien</li>#}
+                {#<li>lien</li>#}
+                {#<li>lien</li>#}
+                {#<li>lien</li>#}
+            {#</ul>#}
+        {#</div>#}
+        {#<div class="col-md-offset-1 col-md-3">#}
+            {#<ul class="list-unstyled">#}
+                {#<li>lien</li>#}
+                {#<li>lien</li>#}
+                {#<li>lien</li>#}
+                {#<li>lien</li>#}
+            {#</ul>#}
+        {#</div>#}
+    {#</div>#}
+{#</div>#}
+</body>
+</html>
