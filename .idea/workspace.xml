@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f09b3b9-469d-4a55-8286-d4f79f9ad752" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Controller/SoapController.php" afterPath="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Controller/SoapController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Resources/public/soap/licenseSoap.wsdl" afterPath="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Resources/public/soap/licenseSoap.wsdl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Services/sendClientCodeService.php" afterPath="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Services/sendClientCodeService.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="LicenseManager.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,21 +30,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SoapController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SoapController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Controller/SoapController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46019107">
-              <caret line="20" column="52" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
+            <state vertical-scroll-proportion="-15.692307">
+              <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sendClientCodeService.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="sendClientCodeService.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Services/sendClientCodeService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.566879">
+              <caret line="42" column="14" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="14" />
               <folding>
                 <element signature="e#134#182#0#PHP" expanded="true" />
               </folding>
@@ -87,8 +87,8 @@
       <file leaf-file-name="TokenClient.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Cib/Bundle/LicenseBundle/Entity/TokenClient.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="56" column="34" selection-start-line="56" selection-start-column="34" selection-end-line="56" selection-end-column="34" />
+            <state vertical-scroll-proportion="-8.461538">
+              <caret line="146" column="20" selection-start-line="146" selection-start-column="20" selection-end-line="146" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -183,10 +183,10 @@
         <option value="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/PrivateCsrfToken.php" />
         <option value="$PROJECT_DIR$/src/Cib/Bundle/LicenseBundle/Entity/Client.php" />
         <option value="$PROJECT_DIR$/src/Cib/Bundle/LicenseBundle/Entity/TokenClient.php" />
-        <option value="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Services/sendClientCodeService.php" />
         <option value="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Services/sendLicenseService.php" />
         <option value="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Resources/public/soap/licenseSoap.wsdl" />
         <option value="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Controller/SoapController.php" />
+        <option value="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Services/sendClientCodeService.php" />
       </list>
     </option>
   </component>
@@ -965,6 +965,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="90" column="47" selection-start-line="90" selection-start-column="32" selection-end-line="90" selection-end-column="47" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -972,6 +973,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+          <folding>
+            <element signature="e#134#166#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1066,24 +1070,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Cib/Bundle/LicenseBundle/Entity/TokenClient.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="56" column="34" selection-start-line="56" selection-start-column="34" selection-end-line="56" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Services/sendClientCodeService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding>
-            <element signature="e#134#182#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Services/sendLicenseService.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1104,9 +1090,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Controller/SoapController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46019107">
-          <caret line="20" column="52" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
+        <state vertical-scroll-proportion="-15.692307">
+          <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Cib/Bundle/LicenseBundle/Entity/TokenClient.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.461538">
+          <caret line="146" column="20" selection-start-line="146" selection-start-column="20" selection-end-line="146" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Services/sendClientCodeService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.566879">
+          <caret line="42" column="14" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="14" />
+          <folding>
+            <element signature="e#134#182#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

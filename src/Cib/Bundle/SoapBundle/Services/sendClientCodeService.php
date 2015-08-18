@@ -40,7 +40,7 @@ class sendClientCodeService
             $tokenClient->setClient($client);
 //            $client->addTokenClient($tokenClient);
             $this->entityManager->persist($tokenClient);
-            $this->entityManager->persist($client);
+            //$this->entityManager->persist($client);
             $this->entityManager->flush();
 
             $this->csrfTokenManager->removeToken($client->getClientId().$dateValidityToken->format('Y-m-d:h'));
