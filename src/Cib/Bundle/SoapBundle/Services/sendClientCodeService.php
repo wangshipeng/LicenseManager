@@ -28,8 +28,16 @@ class sendClientCodeService
 
     public function sendClientCode($clientCode)
     {
-        $client = $this->entityManager->getRepository('CibLicenseBundle:Client')
-            ->findOneBy(array('clientCode' => $clientCode));
+        if($clientCode)
+            $client = $this->entityManager->getRepository('CibLicenseBundle:Client')
+                ->findOneBy(array('clientCode' => $clientCode));
+        else
+            return[
+                'status' => 1,
+                'clientName' => 'client code null',
+                'clientToken' => " ",
+                'clientId' => " ",
+            ];
 
         $dateValidityToken = new \DateTime();
         $error = null;
