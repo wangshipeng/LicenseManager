@@ -14,6 +14,13 @@
         </operation>
     </portType>
 
+    <portType name="sendClientCode_PortType">
+        <operation name="sendClientCode">
+            <input message="tns:sendClientCodeRequest"/>
+            <output message="tns:sendClientCodeResponse"/>
+        </operation>
+    </portType>
+
     <message name="sendLicenseRequest">
         <part name="numTpe" type="xsd:string"/>
         <part name="infoSup0" type="xsd:string"/>
@@ -31,11 +38,28 @@
         <part name="status" type="xsd:string"/>
     </message>
 
+    <message name="sendClientCodeRequest">
+        <part name="clientCode" type="xsd:string"/>
+    </message>
+
+    <message name="sendClientCodeResponse">
+        <part name="status" type="xsd:string"/>
+        <part name="clientName" type="xsd:string"/>
+    </message>
+
     <service name="sendLicense_Service">
         <documentation>WSDL File for sendLicenseService</documentation>
         <port binding="tns:sendLicense_Binding" name="sendLicense_Port">
             <soap:address
                     location="http://license.cib-ingenierie.fr/soap/license" />
+        </port>
+    </service>
+
+    <service name="sendClientCode_Service">
+        <documentation>WSDL File for sendLicenseService</documentation>
+        <port binding="tns:sendClientCode_Binding" name="sendClientCode_Port">
+            <soap:address
+                    location="http://license.cib-ingenierie.fr/soap/client" />
         </port>
     </service>
 
@@ -55,6 +79,27 @@
                 <soap:body
                         encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
                         namespace="urn:examples:sendLicenseService"
+                        use="encoded"/>
+            </output>
+        </operation>
+    </binding>
+
+    <binding name="sendClientCode_Binding" type="tns:sendClientCode_PortType">
+        <soap:binding style="rpc"
+                      transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="sendClientCode">
+            <soap:operation soapAction="sendClientCode"/>
+            <input>
+                <soap:body
+                        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                        namespace="urn:examples:sendClientCodeService"
+                        use="encoded"/>
+            </input>
+
+            <output>
+                <soap:body
+                        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                        namespace="urn:examples:sendClientCodeService"
                         use="encoded"/>
             </output>
         </operation>
