@@ -32,16 +32,22 @@ class sendClientCodeService
             ->findOneBy(array('clientCode' => $clientCode));
 
         $dateValidityToken = new \DateTime();
-
+        $error = null;
         if($client){
             $tempCsrfToken = $this->csrfTokenManager->getToken($client->getClientId().$dateValidityToken->format('Y-m-d:h'));
             $csrfToken = $this->csrfTokenManager->getToken($tempCsrfToken->getValue());
             $tokenClient = new TokenClient($csrfToken->getId(),$csrfToken->getValue(),$client);
             $tokenClient->setClient($client);
 //            $client->addTokenClient($tokenClient);
-            $this->entityManager->persist($tokenClient);
-            //$this->entityManager->persist($client);
-            $this->entityManager->flush();
+
+            try{
+                $this->entityManager->persist($tokenClient);
+                $this->entityManager->persist($client);
+                $this->entityManager->flush();
+            }
+            catch(\Exception $e){
+                $error = $e->getMessage();
+            }
 
             $this->csrfTokenManager->removeToken($client->getClientId().$dateValidityToken->format('Y-m-d:h'));
             return[
@@ -54,7 +60,7 @@ class sendClientCodeService
         else{
             return[
                 'status' => 1,
-                'clientName' => " ",
+                'clientName' => $error,
                 'clientToken' => " ",
                 'clientId' => " ",
             ];

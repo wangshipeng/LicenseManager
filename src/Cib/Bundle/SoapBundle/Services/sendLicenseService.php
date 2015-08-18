@@ -36,8 +36,6 @@ class sendLicenseService
     {
 
         $tpe = new Tpe();
-        //$software = new Software();
-        $dateToken = new \DateTime();
         $tpeSoftware = new TpeSoftware();
         $client = $this->entityManager->getRepository('CibLicenseBundle:Client')
             ->find($idClient);
