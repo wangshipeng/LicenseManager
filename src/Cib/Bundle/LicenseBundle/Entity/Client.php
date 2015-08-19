@@ -51,7 +51,7 @@ class Client
     private $tpe;
 
     /**
-     * @ORM\OneToMany(targetEntity="TokenClient", mappedBy="client")
+     * @ORM\OneToMany(targetEntity="TokenClient", mappedBy="client", cascade={"persist","remove"})
      */
     private $tokenClient;
 
@@ -185,6 +185,7 @@ class Client
     public function addTokenClient(\Cib\Bundle\LicenseBundle\Entity\TokenClient $tokenClient)
     {
         $this->tokenClient[] = $tokenClient;
+        $tokenClient->setClient($this);
 
         return $this;
     }

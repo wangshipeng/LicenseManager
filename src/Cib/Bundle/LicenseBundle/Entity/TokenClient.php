@@ -24,7 +24,7 @@ class TokenClient
     /**
      * @var integer
      *
-     * @ORM\Column(name="client_id", type="integer")
+     * @ORM\Column(name="token_client_id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
@@ -147,7 +147,7 @@ class TokenClient
     public function setClient(\Cib\Bundle\LicenseBundle\Entity\Client $client = null)
     {
         $this->client = $client;
-        $client->addTokenClient($this);
+//        $client->addTokenClient($this);
 
         return $this;
     }

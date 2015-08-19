@@ -45,17 +45,11 @@ class sendClientCodeService
             $tempCsrfToken = $this->csrfTokenManager->getToken($client->getClientId().$dateValidityToken->format('Y-m-d:h'));
             $csrfToken = $this->csrfTokenManager->getToken($tempCsrfToken->getValue());
             $tokenClient = new TokenClient($csrfToken->getId(),$csrfToken->getValue(),$client);
-            $tokenClient->setClient($client);
+//            $tokenClient->setClient($client);
             $client->addTokenClient($tokenClient);
-
-            try{
-                $this->entityManager->persist($tokenClient);
-                $this->entityManager->persist($client);
-                $this->entityManager->flush();
-            }
-            catch(\Exception $e){
-                $error = $e->getMessage();
-            }
+            $this->entityManager->persist($client);
+//            $this->entityManager->persist($client);
+            $this->entityManager->flush();
 
             $this->csrfTokenManager->removeToken($client->getClientId().$dateValidityToken->format('Y-m-d:h'));
             return[

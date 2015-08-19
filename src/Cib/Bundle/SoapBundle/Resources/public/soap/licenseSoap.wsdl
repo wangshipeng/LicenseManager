@@ -1,8 +1,8 @@
 <definitions name="sendLicense"
-             targetNamespace="http://license.cib-ingenierie.fr/soap"
+             targetNamespace="http://localhost/LicenseManager/web/app_dev.php/soap"
              xmlns="http://schemas.xmlsoap.org/wsdl/"
              xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
-             xmlns:tns="http://license.cib-ingenierie.fr/soap"
+             xmlns:tns="http://localhost/LicenseManager/web/app_dev.php/soap"
              xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
 
@@ -55,7 +55,7 @@
         <documentation>WSDL File for sendLicenseService</documentation>
         <port binding="tns:sendLicense_Binding" name="sendLicense_Port">
             <soap:address
-                    location="http://license.cib-ingenierie.fr/soap/license" />
+                    location="http://localhost/LicenseManager/web/app_dev.php/soap/license" />
         </port>
     </service>
 
@@ -63,7 +63,7 @@
         <documentation>WSDL File for sendClientCodeService</documentation>
         <port binding="tns:sendClientCode_Binding" name="sendClientCode_Port">
             <soap:address
-                    location="http://license.cib-ingenierie.fr/soap/client" />
+                    location="http://localhost/LicenseManager/web/app_dev.php/soap/client" />
         </port>
     </service>
 
