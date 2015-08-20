@@ -161,11 +161,11 @@ class sendLicenseService
 
     private function generateLicenseNumber()
     {
-        $tempNumber = mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9);
+        $tempNumber = mt_rand(1,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9);
         while($this->entityManager->getRepository('CibLicenseBundle:TpeSoftware')->findOneBy(array(
-            'softwareLicenseNumber'=> $tempNumber
+            'softwareLicenseNumber'=> $tempNumber,
         )))
-            $tempNumber = mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9);
+            $tempNumber = mt_rand(1,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9);
 
         return $tempNumber;
     }

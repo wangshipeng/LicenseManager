@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f09b3b9-469d-4a55-8286-d4f79f9ad752" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Controller/SoapController.php" afterPath="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Controller/SoapController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Cib/Bundle/LicenseBundle/Entity/TpeSoftware.php" afterPath="$PROJECT_DIR$/src/Cib/Bundle/LicenseBundle/Entity/TpeSoftware.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Resources/public/soap/licenseSoap.wsdl" afterPath="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Resources/public/soap/licenseSoap.wsdl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Services/sendClientCodeService.php" afterPath="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Services/sendClientCodeService.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Services/sendLicenseService.php" afterPath="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Services/sendLicenseService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="LicenseManager.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -76,11 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sendLicenseService.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="sendLicenseService.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Services/sendLicenseService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.076923">
-              <caret line="43" column="47" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
+            <state vertical-scroll-proportion="0.6751592">
+              <caret line="165" column="50" selection-start-line="165" selection-start-column="50" selection-end-line="165" selection-end-column="50" />
               <folding>
                 <element signature="e#134#177#0#PHP" expanded="true" />
               </folding>
@@ -118,11 +113,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="licenseSoap.wsdl" pinned="false" current-in-tab="true">
+      <file leaf-file-name="licenseSoap.wsdl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Resources/public/soap/licenseSoap.wsdl">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.16972478">
-              <caret line="74" column="38" selection-start-line="74" selection-start-column="38" selection-end-line="74" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="40" column="47" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -177,9 +172,9 @@
         <option value="$PROJECT_DIR$/src/Cib/Bundle/LicenseBundle/Entity/TpeSoftware.php" />
         <option value="$PROJECT_DIR$/src/Cib/Bundle/LicenseBundle/Entity/Tpe.php" />
         <option value="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Resources/public/soap/licenseSoapWindows.wsdl" />
-        <option value="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Services/sendLicenseService.php" />
         <option value="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Controller/SoapController.php" />
         <option value="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Resources/public/soap/licenseSoap.wsdl" />
+        <option value="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Services/sendLicenseService.php" />
       </list>
     </option>
   </component>
@@ -1122,13 +1117,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Services/sendLicenseService.php">
+    <entry file="file://$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Resources/public/soap/licenseSoapWindows.wsdl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.076923">
-          <caret line="43" column="47" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
-          <folding>
-            <element signature="e#134#177#0#PHP" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="51" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1140,19 +1133,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Resources/public/soap/licenseSoapWindows.wsdl">
+    <entry file="file://$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Resources/public/soap/licenseSoap.wsdl">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="51" />
+          <caret line="40" column="47" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Resources/public/soap/licenseSoap.wsdl">
+    <entry file="file://$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Services/sendLicenseService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.16972478">
-          <caret line="74" column="38" selection-start-line="74" selection-start-column="38" selection-end-line="74" selection-end-column="38" />
-          <folding />
+        <state vertical-scroll-proportion="0.6751592">
+          <caret line="165" column="50" selection-start-line="165" selection-start-column="50" selection-end-line="165" selection-end-column="50" />
+          <folding>
+            <element signature="e#134#177#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
