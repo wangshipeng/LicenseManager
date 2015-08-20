@@ -32,18 +32,23 @@ class sendLicenseService
     }
 
     public function sendLicense($numTpe,$infoSup0,$infoSup1,$infoSup2, $version, $crc, $typeTpe, $isCless, $isBt, $isGprs
-        , $idClient, $tokenId)
+        , $idClient, $tokenId, $numLicense)
     {
 
-        $tpe = new Tpe();
-        $tpeSoftware = new TpeSoftware();
+
         $client = $this->entityManager->getRepository('CibLicenseBundle:Client')
             ->find($idClient);
         if(!$client)
-            return 9;
+            return [
+                'status' => 9,
+                'numLicense' => "Client inconuu",
+            ];
 
         if($this->findToken($client,$tokenId) != true)
-            return 8;
+            return [
+                'status' => 8,
+                'numLicense' => "Non authorise",
+            ];
 
 
         $softwareVersion = substr($version,6,4);
@@ -52,16 +57,42 @@ class sendLicenseService
         $software = $this->entityManager->getRepository('CibLicenseBundle:Software')
             ->findOneBy(array('softwareNumber' => $softwareNumber));
         if(!$software)
-            return 7;
-        else{
-            $tpeSoftware->setSoftware($software);
-            $tpeSoftware->setTpe($tpe);
+            return [
+                'status' => 7,
+                'numLicense' => "Numero de logiciel incorrect",
+            ];
+
+        $tpe = $this->entityManager->getRepository('CibLicenseBundle:Tpe')->findOneBy(array('tpeSerialNumber' => $numTpe,'tpeIsActive' => true));
+        if($tpe && $tpe->getClient() != $client)
+        {
+            $tpe->setTpeIsActive(false);
+            $tpe = new Tpe();
+            $tpe->setClient($client);
+        }
+        if(!$tpe){
+            $tpe = new Tpe();
+            $tpe->setClient($client);
         }
 
+        if($tpe->getClient() == $client && (($findTpeSoftware = $this->findSoftwareForOneTpe($tpe,$software,$numLicense)) != false)){
+            $tpeSoftware = $findTpeSoftware;
+            $tpeSoftware->setSoftwareDateMaj(new \DateTime());
+        }
+        else{
+            if($numLicense != 0)
+                return [
+                    'status' => 6,
+                    'numLicense' => "Numero de license incorrect",
+                ];
+            $tpeSoftware = new TpeSoftware();
+            $tpeSoftware->setSoftwareDateInit(new \DateTime());
+            $tpeSoftware->setSoftwareLicenseNumber($this->generateLicenseNumber());
+        }
+
+        $tpeSoftware->setSoftware($software);
+        $tpeSoftware->setTpe($tpe);
         $tpeSoftware->setTpeSoftwareVersion($softwareVersion);
         $tpeSoftware->setSoftwareCrc($crc);
-        //$tpeSoftware->setTpeSoftwareVersion($version);
-        $tpeSoftware->setSoftwareDate(new \DateTime());
 
         $software->addTpeSoftware($tpeSoftware);
         $tpe->addTpeSoftware($tpeSoftware);
@@ -74,16 +105,21 @@ class sendLicenseService
         $tpe->setTpeIsGprs($isGprs);
         $tpe->setTpeType($typeTpe);
         $tpe->setTpeSerialNumber($numTpe);
-        $tpe->setClient($client);
         $this->entityManager->persist($tpe);
         $this->entityManager->persist($tpeSoftware);
         $this->entityManager->persist($software);
 
         try {
             $this->entityManager->flush();
-            return 0;
+            return [
+                'status' => 0,
+                'numLicense' => $tpeSoftware->getSoftwareLicenseNumber(),
+            ];
         } catch (\Exception $e) {
-            return $e->getMessage();
+            return [
+                'status' => 1,
+                'numLicense' => $e->getMessage(),
+            ];
         }
 
 
@@ -111,5 +147,26 @@ class sendLicenseService
             }
         }
         return false;
+    }
+
+    private function findSoftwareForOneTpe(Tpe $tpe, Software $software, $numLicense)
+    {
+        foreach ($tpe->getTpeSoftware() as $tpeSoftware){
+            if($tpeSoftware->getSoftware() == $software && $tpeSoftware->getSoftwareLicenseNumber() == $numLicense)
+                return $tpeSoftware;
+        }
+        return false;
+
+    }
+
+    private function generateLicenseNumber()
+    {
+        $tempNumber = mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9);
+        while($this->entityManager->getRepository('CibLicenseBundle:TpeSoftware')->findOneBy(array(
+            'softwareLicenseNumber'=> $tempNumber
+        )))
+            $tempNumber = mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9);
+
+        return $tempNumber;
     }
 }

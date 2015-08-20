@@ -17,7 +17,7 @@ class SoapController extends Controller
     {
 //        $server = new \SoapServer($this->container->get('templating.helper.assets')->getUrl('cibsoap/soap/test.wsdl'));
         $server = new \SoapServer('/var/www/LicenseManager/web/bundles/cibsoap/soap/licenseSoap.wsdl');
-//        $server = new \SoapServer('C:\wamp\www\LicenseManager\web\bundles\cibsoap\soap\licenseSoap.wsdl');
+//        $server = new \SoapServer('C:\wamp\www\LicenseManager\web\bundles\cibsoap\soap\licenseSoapWindows.wsdl');
         $server->setObject($this->get('sendLicense'));
 
         $response = new Response();
@@ -26,6 +26,7 @@ class SoapController extends Controller
         ob_start();
         $server->handle();
         $response->setContent(ob_get_clean());
+
         return $response;
     }
 
@@ -37,7 +38,7 @@ class SoapController extends Controller
     {
 //        $server = new \SoapServer($this->container->get('templating.helper.assets')->getUrl('cibsoap/soap/test.wsdl'));
         $server = new \SoapServer('/var/www/LicenseManager/web/bundles/cibsoap/soap/licenseSoap.wsdl');
-//        $server = new \SoapServer('C:\wamp\www\LicenseManager\web\bundles\cibsoap\soap\licenseSoap.wsdl');
+//        $server = new \SoapServer('C:\wamp\www\LicenseManager\web\bundles\cibsoap\soap\licenseSoapWindows.wsdl');
         $server->setObject($this->get('sendClientCode'));
 
         $response = new Response();
@@ -46,6 +47,7 @@ class SoapController extends Controller
         ob_start();
         $server->handle();
         $response->setContent(ob_get_clean());
+
         return $response;
     }
 }

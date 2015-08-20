@@ -42,9 +42,19 @@ class TpeSoftware
     private $softwareCrc;
 
     /**
-     * @ORM\Column(name="tpe_software_date", type="datetime")
+     * @ORM\Column(name="tpe_software_date_init", type="datetime")
      */
-    private $softwareDate;
+    private $softwareDateInit;
+
+    /**
+     * @ORM\Column(name="tpe_software_date_maj", type="datetime", nullable=true)
+     */
+    private $softwareDateMaj;
+
+    /**
+     * @ORM\Column(name="tpe_software_license_number", type="string")
+     */
+    private $softwareLicenseNumber;
 
     /**
      * @ORM\ManyToOne(targetEntity="Tpe", inversedBy="tpeSoftware")
@@ -162,25 +172,71 @@ class TpeSoftware
     }
 
     /**
-     * Set softwareDate
+     * Set softwareDateInit
      *
-     * @param \DateTime $softwareDate
+     * @param \DateTime $softwareDateInit
      * @return TpeSoftware
      */
-    public function setSoftwareDate($softwareDate)
+    public function setSoftwareDateInit($softwareDateInit)
     {
-        $this->softwareDate = $softwareDate;
+        $this->softwareDateInit = $softwareDateInit;
 
         return $this;
     }
 
     /**
-     * Get softwareDate
+     * Get softwareDateInit
      *
      * @return \DateTime 
      */
-    public function getSoftwareDate()
+    public function getSoftwareDateInit()
     {
-        return $this->softwareDate;
+        return $this->softwareDateInit;
+    }
+
+    /**
+     * Set softwareDateMaj
+     *
+     * @param \DateTime $softwareDateMaj
+     * @return TpeSoftware
+     */
+    public function setSoftwareDateMaj($softwareDateMaj)
+    {
+        $this->softwareDateMaj = $softwareDateMaj;
+
+        return $this;
+    }
+
+    /**
+     * Get softwareDateMaj
+     *
+     * @return \DateTime 
+     */
+    public function getSoftwareDateMaj()
+    {
+        return $this->softwareDateMaj;
+    }
+
+    /**
+     * Set softwareLicenseNumber
+     *
+     * @param string $softwareLicenseNumber
+     * @return TpeSoftware
+     */
+    public function setSoftwareLicenseNumber($softwareLicenseNumber)
+    {
+        $this->softwareLicenseNumber = $softwareLicenseNumber;
+
+        return $this;
+    }
+
+    /**
+     * Get softwareLicenseNumber
+     *
+     * @return string 
+     */
+    public function getSoftwareLicenseNumber()
+    {
+        return $this->softwareLicenseNumber;
     }
 }

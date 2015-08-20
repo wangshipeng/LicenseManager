@@ -34,13 +34,12 @@ class sendClientCodeService
         else
             return[
                 'status' => 1,
-                'clientName' => 'client code null',
+                'clientName' => 'Merci d\'entrer votre code client',
                 'clientToken' => " ",
                 'clientId' => " ",
             ];
 
         $dateValidityToken = new \DateTime();
-        $error = null;
         if($client){
             $tempCsrfToken = $this->csrfTokenManager->getToken($client->getClientId().$dateValidityToken->format('Y-m-d:h'));
             $csrfToken = $this->csrfTokenManager->getToken($tempCsrfToken->getValue());
@@ -62,7 +61,7 @@ class sendClientCodeService
         else{
             return[
                 'status' => 1,
-                'clientName' => $error,
+                'clientName' => 'numéro de client incorrect',
                 'clientToken' => " ",
                 'clientId' => " ",
             ];

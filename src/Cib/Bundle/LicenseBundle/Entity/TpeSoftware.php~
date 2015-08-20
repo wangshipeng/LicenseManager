@@ -42,9 +42,19 @@ class TpeSoftware
     private $softwareCrc;
 
     /**
-     * @ORM\Column(name="tpe_software_date", type="datetime")
+     * @ORM\Column(name="tpe_software_date_init", type="datetime")
      */
-    private $softwareDate;
+    private $softwareDateInit;
+
+    /**
+     * @ORM\Column(name="tpe_software_date_maj", type="datetime", nullable=true)
+     */
+    private $softwareDateMaj;
+
+    /**
+     * @ORM\Column(name="tpe_software_license_number", type="string")
+     */
+    private $softwareLicenseNumber;
 
     /**
      * @ORM\ManyToOne(targetEntity="Tpe", inversedBy="tpeSoftware")
@@ -159,5 +169,51 @@ class TpeSoftware
     public function getSoftware()
     {
         return $this->software;
+    }
+
+    /**
+     * Set softwareDateInit
+     *
+     * @param \DateTime $softwareDateInit
+     * @return TpeSoftware
+     */
+    public function setSoftwareDateInit($softwareDateInit)
+    {
+        $this->softwareDateInit = $softwareDateInit;
+
+        return $this;
+    }
+
+    /**
+     * Get softwareDateInit
+     *
+     * @return \DateTime 
+     */
+    public function getSoftwareDateInit()
+    {
+        return $this->softwareDateInit;
+    }
+
+    /**
+     * Set softwareDateMaj
+     *
+     * @param \DateTime $softwareDateMaj
+     * @return TpeSoftware
+     */
+    public function setSoftwareDateMaj($softwareDateMaj)
+    {
+        $this->softwareDateMaj = $softwareDateMaj;
+
+        return $this;
+    }
+
+    /**
+     * Get softwareDateMaj
+     *
+     * @return \DateTime 
+     */
+    public function getSoftwareDateMaj()
+    {
+        return $this->softwareDateMaj;
     }
 }

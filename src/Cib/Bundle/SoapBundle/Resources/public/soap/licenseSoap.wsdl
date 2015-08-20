@@ -33,11 +33,13 @@
         <part name="isBt" type="xsd:integer"/>
         <part name="isGprs" type="xsd:integer"/>
         <part name="idClient" type="xsd:integer"/>
-        <part name="tokenId" type="xsd:string"/>
+        <part name="tokenClient" type="xsd:string"/>
+        <part name="numLicense" type="xsd:string"/>
     </message>
 
     <message name="sendLicenseResponse">
         <part name="status" type="xsd:string"/>
+        <part name="numLicense" type="xsd:string"/>
     </message>
 
     <message name="sendClientCodeRequest">
