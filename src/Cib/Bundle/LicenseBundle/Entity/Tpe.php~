@@ -55,6 +55,11 @@ class Tpe
     private $tpeIsGprs;
 
     /**
+     * @ORM\Column(name="tpe_isWifi", type="boolean")
+     */
+    private $tpeIsWifi;
+
+    /**
      * @ORM\Column(name="tpe_isActive", type="boolean")
      */
     private $tpeIsActive;
@@ -296,5 +301,74 @@ class Tpe
     public function getClient()
     {
         return $this->client;
+    }
+
+    /**
+     * Set infoSup0
+     *
+     * @param string $infoSup0
+     * @return Tpe
+     */
+    public function setInfoSup0($infoSup0)
+    {
+        $this->infoSup0 = $infoSup0;
+
+        return $this;
+    }
+
+    /**
+     * Get infoSup0
+     *
+     * @return string 
+     */
+    public function getInfoSup0()
+    {
+        return $this->infoSup0;
+    }
+
+    /**
+     * Set infoSup1
+     *
+     * @param string $infoSup1
+     * @return Tpe
+     */
+    public function setInfoSup1($infoSup1)
+    {
+        $this->infoSup1 = $infoSup1;
+
+        return $this;
+    }
+
+    /**
+     * Get infoSup1
+     *
+     * @return string 
+     */
+    public function getInfoSup1()
+    {
+        return $this->infoSup1;
+    }
+
+    /**
+     * Set infoSup2
+     *
+     * @param string $infoSup2
+     * @return Tpe
+     */
+    public function setInfoSup2($infoSup2)
+    {
+        $this->infoSup2 = $infoSup2;
+
+        return $this;
+    }
+
+    /**
+     * Get infoSup2
+     *
+     * @return string 
+     */
+    public function getInfoSup2()
+    {
+        return $this->infoSup2;
     }
 }

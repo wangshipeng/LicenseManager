@@ -31,7 +31,7 @@ class sendLicenseService
         $this->csrfTokenManager = $csrfTokenManager;
     }
 
-    public function sendLicense($numTpe,$infoSup0,$infoSup1,$infoSup2, $version, $crc, $typeTpe, $isCless, $isBt, $isGprs
+    public function sendLicense($numTpe,$infoSup0,$infoSup1,$infoSup2, $version, $crc, $typeTpe, $isCless, $isBt, $isGprs, $isWifi
         , $idClient, $tokenId, $numLicense)
     {
 
@@ -42,12 +42,14 @@ class sendLicenseService
             return [
                 'status' => 9,
                 'numLicense' => "Client inconuu",
+                'softwareName' => "",
             ];
 
         if($this->findToken($client,$tokenId) != true)
             return [
                 'status' => 8,
                 'numLicense' => "Non authorise",
+                'softwareName' => "",
             ];
 
 
@@ -60,6 +62,7 @@ class sendLicenseService
             return [
                 'status' => 7,
                 'numLicense' => "Numero de logiciel incorrect",
+                'softwareName' => "",
             ];
 
         $tpe = $this->entityManager->getRepository('CibLicenseBundle:Tpe')->findOneBy(array('tpeSerialNumber' => $numTpe,'tpeIsActive' => true));
@@ -83,6 +86,7 @@ class sendLicenseService
                 return [
                     'status' => 6,
                     'numLicense' => "Numero de license incorrect",
+                    'softwareName' => "",
                 ];
             $tpeSoftware = new TpeSoftware();
             $tpeSoftware->setSoftwareDateInit(new \DateTime());
@@ -103,6 +107,7 @@ class sendLicenseService
         $tpe->setTpeIsBt($isBt);
         $tpe->setTpeIsCless($isCless);
         $tpe->setTpeIsGprs($isGprs);
+        $tpe->setTpeIsWifi($isWifi);
         $tpe->setTpeType($typeTpe);
         $tpe->setTpeSerialNumber($numTpe);
         $this->entityManager->persist($tpe);
@@ -114,11 +119,13 @@ class sendLicenseService
             return [
                 'status' => 0,
                 'numLicense' => $tpeSoftware->getSoftwareLicenseNumber(),
+                'softwareName' => $software->getSoftwareName(),
             ];
         } catch (\Exception $e) {
             return [
                 'status' => 1,
                 'numLicense' => $e->getMessage(),
+                'softwareName' => "",
             ];
         }
 
