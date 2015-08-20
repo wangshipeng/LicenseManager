@@ -32,6 +32,7 @@
         <part name="isCless" type="xsd:integer"/>
         <part name="isBt" type="xsd:integer"/>
         <part name="isGprs" type="xsd:integer"/>
+        <part name="isWifi" type="xsd:integer"/>
         <part name="idClient" type="xsd:integer"/>
         <part name="tokenClient" type="xsd:string"/>
         <part name="numLicense" type="xsd:string"/>
@@ -40,6 +41,7 @@
     <message name="sendLicenseResponse">
         <part name="status" type="xsd:string"/>
         <part name="numLicense" type="xsd:string"/>
+        <part name="softwareName" type="xsd:string"/>
     </message>
 
     <message name="sendClientCodeRequest">
