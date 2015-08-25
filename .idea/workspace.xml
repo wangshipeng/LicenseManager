@@ -2,43 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f09b3b9-469d-4a55-8286-d4f79f9ad752" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Entity/Key.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Entity/KeyRepository.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Cib/Bundle/CoreBundle/Menu/MenuBuilder.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Cib/Bundle/LicenseBundle/Menu/MenuBuilder.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Cib/Bundle/UserBundle/Menu/MenuBuilder.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Cib/Bundle/UserBundle/EventListener/RegistrationConfirmListener.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Cib/Bundle/UserBundle/Controller/RegistrationController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Cib/Bundle/UserBundle/Controller/UserController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Cib/Bundle/UserBundle/Form/UserType.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Cib/Bundle/CoreBundle/Resources/views/Core/displayFlash.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Cib/Bundle/LicenseBundle/Resources/views/License/displayGlobalLicenses.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Cib/Bundle/LicenseBundle/Resources/public/displayLicense.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Cib/Bundle/UserBundle/Resources/views/User/displayUsers.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Cib/Bundle/UserBundle/Resources/views/User/editUser.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Cib/Bundle/UserBundle/Resources/views/Form/formUser.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Cib/Bundle/CoreBundle/Resources/views/Menu/knp_menu.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Cib/Bundle/UserBundle/Resources/views/Security/login.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Cib/Bundle/CoreBundle/Resources/views/Menu/menu.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Cib/Bundle/UserBundle/Resources/views/Registration/register.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Services/sendKeyService.php" />
-      <change type="DELETED" beforePath="C:\wamp\www\LicenseManager\src\Cib\Bundle\LicenseBundle\Resources\views\Default\index.html.twig" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\LicenseManager\src\Cib\Bundle\UserBundle\Controller\DefaultController.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\LicenseManager\src\Cib\Bundle\UserBundle\Resources\views\Default\index.html.twig" afterPath="" />
-      <change type="MOVED" beforePath="C:\wamp\www\LicenseManager\src\Cib\Bundle\CoreBundle\Controller\DefaultController.php" afterPath="$PROJECT_DIR$/src/Cib/Bundle/CoreBundle/Controller/CoreController.php" />
-      <change type="MOVED" beforePath="C:\wamp\www\LicenseManager\src\Cib\Bundle\CoreBundle\Resources\views\Default\index.html.twig" afterPath="$PROJECT_DIR$/src/Cib/Bundle/CoreBundle/Resources/views/Core/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Cib/Bundle/LicenseBundle/Controller/LicenseController.php" afterPath="$PROJECT_DIR$/src/Cib/Bundle/LicenseBundle/Controller/LicenseController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/LicenseManager.iml" afterPath="$PROJECT_DIR$/.idea/LicenseManager.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Controller/SoapController.php" afterPath="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Controller/SoapController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Cib/Bundle/CoreBundle/Resources/public/css/coreStyle.css" afterPath="$PROJECT_DIR$/src/Cib/Bundle/CoreBundle/Resources/public/css/coreStyle.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Cib/Bundle/CoreBundle/Resources/views/layout.html.twig" afterPath="$PROJECT_DIR$/src/Cib/Bundle/CoreBundle/Resources/views/layout.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Resources/public/soap/licenseSoap.wsdl" afterPath="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Resources/public/soap/licenseSoap.wsdl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/parameters.yml.dist" afterPath="$PROJECT_DIR$/app/config/parameters.yml.dist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="LicenseManager.iws" />
@@ -76,21 +40,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="licenseSoap.wsdl" pinned="false" current-in-tab="true">
+      <file leaf-file-name="licenseSoap.wsdl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Resources/public/soap/licenseSoap.wsdl">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.6081301">
-              <caret line="158" column="14" selection-start-line="158" selection-start-column="14" selection-end-line="158" selection-end-column="14" />
+            <state vertical-scroll-proportion="-15.931034">
+              <caret line="127" column="39" selection-start-line="127" selection-start-column="39" selection-end-line="127" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SoapController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SoapController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Controller/SoapController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.23077">
-              <caret line="69" column="26" selection-start-line="69" selection-start-column="26" selection-end-line="69" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.46763754">
+              <caret line="20" column="54" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -226,7 +190,6 @@
         <option value="$PROJECT_DIR$/src/Cib/Bundle/LicenseBundle/Resources/public/displayLicense.js" />
         <option value="$PROJECT_DIR$/src/Cib/Bundle/CoreBundle/Resources/public/css/coreStyle.css" />
         <option value="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Resources/public/soap/licenseSoapWindows.wsdl" />
-        <option value="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Controller/SoapController.php" />
         <option value="$PROJECT_DIR$/app/config/parameters.yml" />
         <option value="$PROJECT_DIR$/app/config/parameters.yml.dist" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
@@ -235,6 +198,7 @@
         <option value="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Entity/Key.php" />
         <option value="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Services/sendKeyService.php" />
         <option value="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Resources/public/soap/licenseSoap.wsdl" />
+        <option value="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Controller/SoapController.php" />
       </list>
     </option>
   </component>
@@ -1085,6 +1049,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.8076925">
           <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
+          <folding>
+            <element signature="e#55#92#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1127,14 +1094,6 @@
           <folding>
             <element signature="e#134#166#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Controller/SoapController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.23077">
-          <caret line="69" column="26" selection-start-line="69" selection-start-column="26" selection-end-line="69" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1200,8 +1159,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Resources/public/soap/licenseSoap.wsdl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.6081301">
-          <caret line="158" column="14" selection-start-line="158" selection-start-column="14" selection-end-line="158" selection-end-column="14" />
+        <state vertical-scroll-proportion="-15.931034">
+          <caret line="127" column="39" selection-start-line="127" selection-start-column="39" selection-end-line="127" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Controller/SoapController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46763754">
+          <caret line="20" column="54" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
           <folding />
         </state>
       </provider>
