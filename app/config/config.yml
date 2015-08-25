@@ -6,11 +6,11 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: en
+    locale: fr
 
 framework:
     #esi:             ~
-    #translator:      { fallbacks: ["%locale%"] }
+    translator:      { fallbacks: ["%locale%"] }
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -50,26 +50,59 @@ assetic:
         #    jar: "%kernel.root_dir%/Resources/java/yuicompressor-2.4.7.jar"
 
 # Doctrine Configuration
+#doctrine:
+#    dbal:
+#        driver:   pdo_mysql
+#        host:     "%database_host%"
+#        port:     "%database_port%"
+#        dbname:   "%database_name%"
+#        user:     "%database_user%"
+#        password: "%database_password%"
+#        charset:  UTF8
+#        # if using pdo_sqlite as your database driver:
+#        #   1. add the path in parameters.yml
+#        #     e.g. database_path: "%kernel.root_dir%/data/data.db3"
+#        #   2. Uncomment database_path in parameters.yml.dist
+#        #   3. Uncomment next line:
+#        #     path:     "%database_path%"
+#
+#    orm:
+#        auto_generate_proxy_classes: "%kernel.debug%"
+#        naming_strategy: doctrine.orm.naming_strategy.underscore
+#        auto_mapping: true
+
 doctrine:
     dbal:
-        driver:   pdo_mysql
-        host:     "%database_host%"
-        port:     "%database_port%"
-        dbname:   "%database_name%"
-        user:     "%database_user%"
-        password: "%database_password%"
-        charset:  UTF8
-        # if using pdo_sqlite as your database driver:
-        #   1. add the path in parameters.yml
-        #     e.g. database_path: "%kernel.root_dir%/data/data.db3"
-        #   2. Uncomment database_path in parameters.yml.dist
-        #   3. Uncomment next line:
-        #     path:     "%database_path%"
-
+        default_connection:   default
+        connections:
+            default:
+                driver:   pdo_mysql
+                host:     %database_host%
+                port:     %database_port%
+                dbname:   %database_name%
+                user:     %database_user%
+                password: %database_password%
+                charset:  UTF8
+            key:
+                driver:   pdo_mysql
+                host:     %database_host2%
+                port:     %database_port2%
+                dbname:   %database_name2%
+                user:     %database_user2%
+                password: %database_password2%
+                charset:  UTF8
     orm:
-        auto_generate_proxy_classes: "%kernel.debug%"
-        naming_strategy: doctrine.orm.naming_strategy.underscore
-        auto_mapping: true
+        default_entity_manager:   default
+        entity_managers:
+            default:
+                connection:       default
+                mappings:
+                    CibLicenseBundle: ~
+                    CibUserBundle: ~
+            key:
+                connection:       key
+                mappings:
+                    CibSoapBundle: ~
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -97,9 +130,61 @@ knp_paginator:
         sortable: KnpPaginatorBundle:Pagination:sortable_link.html.twig # sort link template
 
 services:
+    cib_user.registration_complet:
+        class: Cib\Bundle\UserBundle\EventListener\RegistrationConfirmListener
+        arguments: [@router]
+        tags:
+            - { name: kernel.event_subscriber }
     sendLicense:
         class: Cib\Bundle\SoapBundle\Services\sendLicenseService
         arguments: [@doctrine.orm.entity_manager,@security.csrf.token_manager]
     sendClientCode:
         class: Cib\Bundle\SoapBundle\Services\sendClientCodeService
         arguments: [@doctrine.orm.entity_manager,@security.csrf.token_manager]
+    sendKey:
+        class: Cib\Bundle\SoapBundle\Services\sendKeyService
+        arguments: [@doctrine.orm.key_entity_manager,@security.csrf.token_manager]
+
+    cib_core_menu.menu_builder:
+        class: Cib\Bundle\CoreBundle\Menu\MenuBuilder
+        arguments: ["@knp_menu.factory","@security.context"]
+    cib_menu.menu.index:
+        class: Knp\Menu\MenuItem # the service definition requires setting the class
+        factory_service: cib_core_menu.menu_builder
+        factory_method: createIndexMenu
+        arguments: ["@request","@security.context"]
+        scope: request # needed as we have the request as a dependency here
+        tags:
+            - { name: knp_menu.menu, alias: index } # The alias is what is used to retrieve the menu
+
+    cib_user_menu.menu_builder:
+        class: Cib\Bundle\UserBundle\Menu\MenuBuilder
+        arguments: ["@knp_menu.factory","@security.context"]
+    cib_menu.menu.login:
+        class: Knp\Menu\MenuItem # the service definition requires setting the class
+        factory_service: cib_user_menu.menu_builder
+        factory_method: createLoginMenu
+        arguments: ["@request","@security.context"]
+        scope: request # needed as we have the request as a dependency here
+        tags:
+            - { name: knp_menu.menu, alias: login } # The alias is what is used to retrieve the menu
+    cib_menu.menu.loggedIn:
+        class: Knp\Menu\MenuItem # the service definition requires setting the class
+        factory_service: cib_user_menu.menu_builder
+        factory_method: createLoggedInMenu
+        arguments: ["@request","@security.context"]
+        scope: request # needed as we have the request as a dependency here
+        tags:
+            - { name: knp_menu.menu, alias: loggedin } # The alias is what is used to retrieve the menu
+
+    cib_license_menu.menu_builder:
+        class: Cib\Bundle\LicenseBundle\Menu\MenuBuilder
+        arguments: ["@knp_menu.factory","@security.context"]
+    cib_menu.menu.license:
+        class: Knp\Menu\MenuItem # the service definition requires setting the class
+        factory_service: cib_license_menu.menu_builder
+        factory_method: createLicenseMenu
+        arguments: ["@request","@security.context"]
+        scope: request # needed as we have the request as a dependency here
+        tags:
+            - { name: knp_menu.menu, alias: license } # The alias is what is used to retrieve the menu

@@ -10,3 +10,12 @@
 .marginAutoAll{
     margin: auto;
 }
+
+.clientRow:hover{
+    background-color: rgba(51, 65, 100, 0.5);
+    cursor: pointer;
+}
+
+#subTitle{
+    background-color: rgba(51, 65, 100, 0.5);
+}

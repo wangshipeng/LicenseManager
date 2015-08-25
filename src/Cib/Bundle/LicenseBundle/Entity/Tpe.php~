@@ -79,6 +79,12 @@ class Tpe
      */
     private $infoSup2;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Cib\Bundle\SoapBundle\Entity\Key", cascade="persist")
+     * @ORM\JoinColumn(name="key_id", referencedColumnName="key_id")
+     */
+    private $key;
+
 
     /**
      * @ORM\OneToMany(targetEntity="TpeSoftware",mappedBy="tpe")
@@ -370,5 +376,28 @@ class Tpe
     public function getInfoSup2()
     {
         return $this->infoSup2;
+    }
+
+    /**
+     * Set tpeIsWifi
+     *
+     * @param boolean $tpeIsWifi
+     * @return Tpe
+     */
+    public function setTpeIsWifi($tpeIsWifi)
+    {
+        $this->tpeIsWifi = $tpeIsWifi;
+
+        return $this;
+    }
+
+    /**
+     * Get tpeIsWifi
+     *
+     * @return boolean 
+     */
+    public function getTpeIsWifi()
+    {
+        return $this->tpeIsWifi;
     }
 }

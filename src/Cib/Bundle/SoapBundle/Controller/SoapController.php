@@ -16,8 +16,8 @@ class SoapController extends Controller
     public function sendLicenseAction()
     {
 //        $server = new \SoapServer($this->container->get('templating.helper.assets')->getUrl('cibsoap/soap/test.wsdl'));
-        $server = new \SoapServer('/var/www/LicenseManager/web/bundles/cibsoap/soap/licenseSoap.wsdl');
-//        $server = new \SoapServer('C:\wamp\www\LicenseManager\web\bundles\cibsoap\soap\licenseSoapWindows.wsdl');
+//        $server = new \SoapServer('/var/www/LicenseManager/web/bundles/cibsoap/soap/licenseSoap.wsdl');
+        $server = new \SoapServer('C:\wamp\www\LicenseManager\web\bundles\cibsoap\soap\licenseSoapWindows.wsdl');
         $server->setObject($this->get('sendLicense'));
 
         $response = new Response();
@@ -37,12 +37,34 @@ class SoapController extends Controller
     public function sendClientCodeAction()
     {
 //        $server = new \SoapServer($this->container->get('templating.helper.assets')->getUrl('cibsoap/soap/test.wsdl'));
-        $server = new \SoapServer('/var/www/LicenseManager/web/bundles/cibsoap/soap/licenseSoap.wsdl');
-//        $server = new \SoapServer('C:\wamp\www\LicenseManager\web\bundles\cibsoap\soap\licenseSoapWindows.wsdl');
+//        $server = new \SoapServer('/var/www/LicenseManager/web/bundles/cibsoap/soap/licenseSoap.wsdl');
+        $server = new \SoapServer('C:\wamp\www\LicenseManager\web\bundles\cibsoap\soap\licenseSoapWindows.wsdl');
         $server->setObject($this->get('sendClientCode'));
 
         $response = new Response();
         $response->headers->set('Content-Type','text/xml; charset=utf-8');
+
+        ob_start();
+        $server->handle();
+        $response->setContent(ob_get_clean());
+
+        return $response;
+    }
+
+    /**
+     * @Route("/soap/key")
+     * @Template()
+     */
+    public function sendKeyAction()
+    {
+//        $server = new \SoapServer($this->container->get('templating.helper.assets')->getUrl('cibsoap/soap/test.wsdl'));
+//        $server = new \SoapServer('/var/www/LicenseManager/web/bundles/cibsoap/soap/licenseSoap.wsdl');
+        $server = new \SoapServer('C:\wamp\www\LicenseManager\web\bundles\cibsoap\soap\licenseSoapWindows.wsdl');
+        $server->setObject($this->get('sendKey'));
+
+        $response = new Response();
+        $response->headers->set('Content-Type','text/xml; charset=utf-8');
+
 
         ob_start();
         $server->handle();

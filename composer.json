@@ -25,6 +25,7 @@
         "knplabs/knp-menu-bundle": "2.0.*@dev",
         "knplabs/knp-paginator-bundle": "~2.4",
         "jms/serializer": "~0.11",
+        "friendsofsymfony/jsrouting-bundle": "~1.5",
         "mashape/unirest-php" : "dev-master",
         "liuggio/excelbundle": "~2.0",
         "noiselabs/nusoap-bundle": "dev-master"

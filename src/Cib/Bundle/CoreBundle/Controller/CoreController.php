@@ -7,14 +7,14 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Response;
 
-class DefaultController extends Controller
+class CoreController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/", name="index")
      * @Template()
      */
     public function indexAction()
     {
-        return $this->render('CibCoreBundle:Default:index.html.twig');
+        return $this->render('CibCoreBundle:Core:index.html.twig');
     }
 }

@@ -1,0 +1,51 @@
+{% extends 'CibCoreBundle::layout.html.twig' %}
+
+{% block body %}
+
+
+    <div class="row">
+        <h1>Licences</h1>
+    </div>
+    <div class="row">
+        <table class="table-bordered table-responsive col-xs-2 col-md-2">
+            <thead id="tableHeadClient">
+                <tr><td>&nbsp;</td></tr>
+                <tr class="titleTable">
+                    <th class="col-xs-2 col-md-2" style="text-align: center">CLIENTS</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for client in clients %}
+                <tr>
+                    <td id="{{ client.clientId }}" class="clientRow">{{ client.clientName }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <table class="table-bordered table-responsive col-xs-10 col-md-10">
+            <thead id="tableHeadTpe">
+                <tr class="titleTable">
+                    <th style="text-align: center" colspan="9">TPE</th>
+                </tr>
+            </thead>
+            <tbody id="tableBodyTpe">
+                <tr id="subTitle">
+                    <td>NUM SERIE</td>
+                    <td>INFO SUPP 1</td>
+                    <td>INFO SUPP 2</td>
+                    <td>INFO SUPP 3</td>
+                    <td>TYPE</td>
+                    <td>CLESS</td>
+                    <td>BLUETOOTH</td>
+                    <td>GPRS/3G</td>
+                    <td>WIFI</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="modalLoading" hidden="hidden" style="text-align: center">
+        <img src="{{ asset('bundles/cibcore/pictures/ajax-loader-pk.gif') }}" {#width="30px" height="30px"#} style="margin-top: 25%">
+        <p>CHARGEMENT EN COURS</p>
+    </div>
+{% endblock body %}
