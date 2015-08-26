@@ -57,6 +57,21 @@ class TpeSoftware
     private $softwareLicenseNumber;
 
     /**
+     * @ORM\Column(name="tpe_software_apn", type="string")
+     */
+    private $softwareApn;
+
+    /**
+     * @ORM\Column(name="tpe_software_login", type="string")
+     */
+    private $softwareLogin;
+
+    /**
+     * @ORM\Column(name="tpe_software_pwd", type="string")
+     */
+    private $softwarePwd;
+
+    /**
      * @ORM\ManyToOne(targetEntity="Tpe", inversedBy="tpeSoftware")
      * @ORM\JoinColumn(name="tpe_id", referencedColumnName="tpe_id")
      **/
@@ -215,5 +230,28 @@ class TpeSoftware
     public function getSoftwareDateMaj()
     {
         return $this->softwareDateMaj;
+    }
+
+    /**
+     * Set softwareLicenseNumber
+     *
+     * @param string $softwareLicenseNumber
+     * @return TpeSoftware
+     */
+    public function setSoftwareLicenseNumber($softwareLicenseNumber)
+    {
+        $this->softwareLicenseNumber = $softwareLicenseNumber;
+
+        return $this;
+    }
+
+    /**
+     * Get softwareLicenseNumber
+     *
+     * @return string 
+     */
+    public function getSoftwareLicenseNumber()
+    {
+        return $this->softwareLicenseNumber;
     }
 }

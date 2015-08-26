@@ -32,7 +32,7 @@ class sendLicenseService
     }
 
     public function sendLicense($numTpe,$infoSup0,$infoSup1,$infoSup2, $version, $crc, $typeTpe, $isCless, $isBt, $isGprs, $isWifi
-        , $idClient, $tokenId, $numLicense)
+        , $idClient, $tokenId, $numLicense,$apn,$login,$pass)
     {
 
 
@@ -97,7 +97,9 @@ class sendLicenseService
         $tpeSoftware->setTpe($tpe);
         $tpeSoftware->setTpeSoftwareVersion($softwareVersion);
         $tpeSoftware->setSoftwareCrc($crc);
-
+        $tpeSoftware->setSoftwareApn($apn);
+        $tpeSoftware->setSoftwareLogin($login);
+        $tpeSoftware->setSoftwarePwd($pass);
         $software->addTpeSoftware($tpeSoftware);
         $tpe->addTpeSoftware($tpeSoftware);
         $tpe->setInfoSup0($infoSup0);

@@ -43,6 +43,9 @@
         <part name="idClient" type="xsd:integer"/>
         <part name="tokenClient" type="xsd:string"/>
         <part name="numLicense" type="xsd:string"/>
+        <part name="apn" type="xsd:string"/>
+        <part name="login" type="xsd:string"/>
+        <part name="pass" type="xsd:string"/>
     </message>
 
     <message name="sendLicenseResponse">

@@ -57,6 +57,21 @@ class TpeSoftware
     private $softwareLicenseNumber;
 
     /**
+     * @ORM\Column(name="tpe_software_apn", type="string", nullable=true)
+     */
+    private $softwareApn;
+
+    /**
+     * @ORM\Column(name="tpe_software_login", type="string", nullable=true)
+     */
+    private $softwareLogin;
+
+    /**
+     * @ORM\Column(name="tpe_software_pwd", type="string", nullable=true)
+     */
+    private $softwarePwd;
+
+    /**
      * @ORM\ManyToOne(targetEntity="Tpe", inversedBy="tpeSoftware")
      * @ORM\JoinColumn(name="tpe_id", referencedColumnName="tpe_id")
      **/
@@ -238,5 +253,74 @@ class TpeSoftware
     public function getSoftwareLicenseNumber()
     {
         return $this->softwareLicenseNumber;
+    }
+
+    /**
+     * Set softwareApn
+     *
+     * @param string $softwareApn
+     * @return TpeSoftware
+     */
+    public function setSoftwareApn($softwareApn)
+    {
+        $this->softwareApn = $softwareApn;
+
+        return $this;
+    }
+
+    /**
+     * Get softwareApn
+     *
+     * @return string 
+     */
+    public function getSoftwareApn()
+    {
+        return $this->softwareApn;
+    }
+
+    /**
+     * Set softwareLogin
+     *
+     * @param string $softwareLogin
+     * @return TpeSoftware
+     */
+    public function setSoftwareLogin($softwareLogin)
+    {
+        $this->softwareLogin = $softwareLogin;
+
+        return $this;
+    }
+
+    /**
+     * Get softwareLogin
+     *
+     * @return string 
+     */
+    public function getSoftwareLogin()
+    {
+        return $this->softwareLogin;
+    }
+
+    /**
+     * Set softwarePwd
+     *
+     * @param string $softwarePwd
+     * @return TpeSoftware
+     */
+    public function setSoftwarePwd($softwarePwd)
+    {
+        $this->softwarePwd = $softwarePwd;
+
+        return $this;
+    }
+
+    /**
+     * Get softwarePwd
+     *
+     * @return string 
+     */
+    public function getSoftwarePwd()
+    {
+        return $this->softwarePwd;
     }
 }
