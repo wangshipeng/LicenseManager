@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f09b3b9-469d-4a55-8286-d4f79f9ad752" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Cib/Bundle/LicenseBundle/Entity/TpeSoftware.php" afterPath="$PROJECT_DIR$/src/Cib/Bundle/LicenseBundle/Entity/TpeSoftware.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Cib/Bundle/LicenseBundle/Resources/views/License/displayGlobalLicenses.html.twig" afterPath="$PROJECT_DIR$/src/Cib/Bundle/LicenseBundle/Resources/views/License/displayGlobalLicenses.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Cib/Bundle/LicenseBundle/Resources/public/displayLicense.js" afterPath="$PROJECT_DIR$/src/Cib/Bundle/LicenseBundle/Resources/public/displayLicense.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Resources/public/soap/licenseSoap.wsdl" afterPath="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Resources/public/soap/licenseSoap.wsdl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Services/sendLicenseService.php" afterPath="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Services/sendLicenseService.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="LicenseManager.iws" />
@@ -43,11 +41,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="licenseSoap.wsdl" pinned="false" current-in-tab="true">
+      <file leaf-file-name="licenseSoap.wsdl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Resources/public/soap/licenseSoap.wsdl">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.36422765">
-              <caret line="47" column="45" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
+            <state vertical-scroll-proportion="-15.344828">
+              <caret line="60" column="43" selection-start-line="60" selection-start-column="43" selection-end-line="60" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -56,8 +54,8 @@
       <file leaf-file-name="sendLicenseService.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Services/sendLicenseService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.153847">
-              <caret line="101" column="44" selection-start-line="101" selection-start-column="44" selection-end-line="101" selection-end-column="44" />
+            <state vertical-scroll-proportion="-12.653846">
+              <caret line="88" column="41" selection-start-line="88" selection-start-column="41" selection-end-line="88" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -100,18 +98,18 @@
       <file leaf-file-name="TpeSoftware.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Cib/Bundle/LicenseBundle/Entity/TpeSoftware.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.730769">
+            <state vertical-scroll-proportion="56.884617">
               <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="displayLicense.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="displayLicense.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Cib/Bundle/LicenseBundle/Resources/public/displayLicense.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.6335404">
+              <caret line="26" column="77" selection-start-line="26" selection-start-column="77" selection-end-line="26" selection-end-column="77" />
               <folding>
                 <element signature="e#0#43#0" expanded="false" />
               </folding>
@@ -132,8 +130,8 @@
       <file leaf-file-name="displayGlobalLicenses.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Cib/Bundle/LicenseBundle/Resources/views/License/displayGlobalLicenses.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.730769">
-              <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
+            <state vertical-scroll-proportion="-15.615385">
+              <caret line="36" column="40" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -196,12 +194,12 @@
         <option value="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Controller/SoapController.php" />
         <option value="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Services/sendKeyService.php" />
         <option value="$PROJECT_DIR$/src/Cib/Bundle/LicenseBundle/Controller/LicenseController.php" />
-        <option value="$PROJECT_DIR$/src/Cib/Bundle/LicenseBundle/Resources/views/License/displayGlobalLicenses.html.twig" />
-        <option value="$PROJECT_DIR$/src/Cib/Bundle/LicenseBundle/Resources/public/displayLicense.js" />
         <option value="$PROJECT_DIR$/src/Cib/Bundle/LicenseBundle/Entity/TpeSoftware.php" />
         <option value="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Resources/public/soap/licenseSoapWindows.wsdl" />
         <option value="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Services/sendLicenseService.php" />
         <option value="$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Resources/public/soap/licenseSoap.wsdl" />
+        <option value="$PROJECT_DIR$/src/Cib/Bundle/LicenseBundle/Resources/views/License/displayGlobalLicenses.html.twig" />
+        <option value="$PROJECT_DIR$/src/Cib/Bundle/LicenseBundle/Resources/public/displayLicense.js" />
       </list>
     </option>
   </component>
@@ -862,7 +860,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2835821" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -872,7 +870,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27272728" sideWeight="0.48720682" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27272728" sideWeight="0.48720682" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1237,14 +1235,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Cib/Bundle/LicenseBundle/Resources/views/License/displayGlobalLicenses.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.730769">
-          <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Cib/Bundle/LicenseBundle/Entity/Software.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="3.9230769">
@@ -1263,16 +1253,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Cib/Bundle/LicenseBundle/Resources/public/displayLicense.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#43#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Cib/Bundle/LicenseBundle/Entity/Tpe.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.730769">
@@ -1281,18 +1261,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Cib/Bundle/LicenseBundle/Entity/TpeSoftware.php">
+    <entry file="file://$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Resources/public/soap/licenseSoap.wsdl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.730769">
-          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+        <state vertical-scroll-proportion="-15.344828">
+          <caret line="60" column="43" selection-start-line="60" selection-start-column="43" selection-end-line="60" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Services/sendLicenseService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.153847">
-          <caret line="101" column="44" selection-start-line="101" selection-start-column="44" selection-end-line="101" selection-end-column="44" />
+        <state vertical-scroll-proportion="-12.653846">
+          <caret line="88" column="41" selection-start-line="88" selection-start-column="41" selection-end-line="88" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Cib/Bundle/LicenseBundle/Entity/TpeSoftware.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="56.884617">
+          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1305,11 +1293,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Cib/Bundle/SoapBundle/Resources/public/soap/licenseSoap.wsdl">
+    <entry file="file://$PROJECT_DIR$/src/Cib/Bundle/LicenseBundle/Resources/views/License/displayGlobalLicenses.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36422765">
-          <caret line="47" column="45" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
+        <state vertical-scroll-proportion="-15.615385">
+          <caret line="36" column="40" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Cib/Bundle/LicenseBundle/Resources/public/displayLicense.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6335404">
+          <caret line="26" column="77" selection-start-line="26" selection-start-column="77" selection-end-line="26" selection-end-column="77" />
+          <folding>
+            <element signature="e#0#43#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

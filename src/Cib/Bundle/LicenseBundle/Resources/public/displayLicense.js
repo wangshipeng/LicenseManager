@@ -18,16 +18,17 @@ $(".clientRow").on('click',function(){
         success : function(data){
             $('.modal').hide();
             $.each(JSON.parse(data), function(i,item){
-                var test = (item.tpe_software);
-                $.each(test,function(j,jtem){
-                   console.log(jtem) ;
+                $.each(item.tpe_software,function(j,jtem){
+                    console.log(jtem);
+                    $("#tableBodyTpe").append('<tr class="rowResult" id="'+item.tpe_id+'"><td>'+item.tpe_serial_number+'</td>' +
+                        '<td>'+jtem.software.software_name+'</td>'+'<td>'+item.info_sup0+'</td><td>'+item.info_sup1+'</td><td>'+item.info_sup2+'</td>' +
+                        '<td>'+item.tpe_type+'</td><td>'+item.tpe_is_cless+'</td><td>'+item.tpe_is_bt+'</td>' +
+                        '<td>'+item.tpe_is_gprs+'</td><td>'+item.tpe_is_wifi+'</td><td>'+jtem.software_apn+'</td>' +
+                        '<td>'+jtem.software_login+'</td><td>'+jtem.software_pwd+'</td></tr>')
+                });
                 });
 
-                $("#tableBodyTpe").append('<tr class="rowResult" id="'+item.tpe_id+'"><td>'+item.tpe_serial_number+'</td>' +
-                    '<td>'+item.tpe_software.software.software_name+'</td>'+'<td>'+item.info_sup0+'</td><td>'+item.info_sup1+'</td><td>'+item.info_sup2+'</td>' +
-                    '<td>'+item.tpe_type+'</td><td>'+item.tpe_is_cless+'</td><td>'+item.tpe_is_bt+'</td>' +
-                    '<td>'+item.tpe_is_gprs+'</td><td>'+item.tpe_is_wifi+'</td></tr>')
-            });
+
             $(".modalLoading").hide();
         },
         beforeSend: function(){
