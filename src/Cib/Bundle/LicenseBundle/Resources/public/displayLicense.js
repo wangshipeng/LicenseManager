@@ -19,7 +19,7 @@ $(".clientRow").on('click',function(){
             $('.modal').hide();
             $.each(JSON.parse(data), function(i,item){
                 $("#tableBodyTpe").append('<tr class="rowResult" id="'+item.tpe_id+'"><td>'+item.tpe_serial_number+'</td>' +
-                    '<td>'+item.info_sup0+'</td><td>'+item.info_sup1+'</td><td>'+item.info_sup2+'</td>' +
+                    '<td>'+item.tpe_software.software.software_name+'</td>'+'<td>'+item.info_sup0+'</td><td>'+item.info_sup1+'</td><td>'+item.info_sup2+'</td>' +
                     '<td>'+item.tpe_type+'</td><td>'+item.tpe_is_cless+'</td><td>'+item.tpe_is_bt+'</td>' +
                     '<td>'+item.tpe_is_gprs+'</td><td>'+item.tpe_is_wifi+'</td></tr>')
             });
