@@ -19,7 +19,7 @@ $(".clientRow").on('click',function(){
             $('.modal').hide();
             $.each(JSON.parse(data), function(i,item){
                 $.each(item.tpe_software,function(j,jtem){
-                    console.log(jtem);
+                    //console.log(jtem);
                     $("#tableBodyTpe").append('<tr class="rowResult" id="'+item.tpe_id+'"><td>'+item.tpe_serial_number+'</td>' +
                         '<td>'+jtem.software.software_name+'</td><td>'+jtem.software_license_number+'</td>'+
                         '<td>'+item.info_sup0+'</td><td>'+item.info_sup1+'</td>' +
