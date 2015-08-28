@@ -164,6 +164,10 @@ class sendLicenseService
         foreach ($tpe->getTpeSoftware() as $tpeSoftware){
             if($tpeSoftware->getSoftware() == $software && $tpeSoftware->getSoftwareLicenseNumber() == $numLicense)
                 return $tpeSoftware;
+            else if($tpeSoftware->getSoftware() == $software && $tpeSoftware->getSoftwareLicenseNumber() != $numLicense){
+                $this->entityManager->remove($tpeSoftware);
+                return false;
+            }
         }
         return false;
 
