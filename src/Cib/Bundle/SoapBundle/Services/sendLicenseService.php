@@ -45,10 +45,11 @@ class sendLicenseService
                 'softwareName' => "",
             ];
 
-        if($this->findToken($client,$tokenId) != true)
+        $token = $this->findToken($client,$tokenId);
+        if( $token === false)
             return [
                 'status' => 8,
-                'numLicense' => "Non authorise",
+                'numLicense' => "Non autorise",
                 'softwareName' => "",
             ];
 
@@ -118,6 +119,9 @@ class sendLicenseService
 
         try {
             $this->entityManager->flush();
+            $client->removeTokenClient($token);
+            $this->entityManager->remove($token);
+            $this->entityManager->flush();
             return [
                 'status' => 0,
                 'numLicense' => $tpeSoftware->getSoftwareLicenseNumber(),
@@ -142,10 +146,7 @@ class sendLicenseService
         foreach($client->getTokenClient() as $tokenClient){
             if($tokenClient->getTokenId() == $search){
                 if($tokenClient->getTokenDate()->diff($date)->h < 1 ){
-                    $client->removeTokenClient($tokenClient);
-                    $this->entityManager->remove($tokenClient);
-                    $this->entityManager->flush();
-                    return true;
+                    return $tokenClient;
                 }
                 else{
                     $client->removeTokenClient($tokenClient);

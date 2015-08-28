@@ -61,7 +61,7 @@ class sendClientCodeService
         else{
             return[
                 'status' => 1,
-                'clientName' => 'numéro de client incorrect',
+                'clientName' => 'numero de client incorrect',
                 'clientToken' => " ",
                 'clientId' => " ",
             ];
