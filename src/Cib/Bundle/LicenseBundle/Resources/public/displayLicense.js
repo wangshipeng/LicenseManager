@@ -19,16 +19,19 @@ $(".clientRow").on('click',function(){
             $('.modal').hide();
             $.each(JSON.parse(data), function(i,item){
                 $.each(item.tpe_software,function(j,jtem){
-                    //console.log(jtem);
                     $("#tableBodyTpe").append('<tr class="rowResult" id="'+item.tpe_id+'"><td>'+item.tpe_serial_number+'</td>' +
                         '<td>'+jtem.software.software_name+'</td><td>'+jtem.software_license_number+'</td>'+
                         '<td>'+item.info_sup0+'</td><td>'+item.info_sup1+'</td>' +
                         '<td>'+item.info_sup2+'</td>' +
                         '<td>'+item.tpe_type+'</td><td>'+item.tpe_is_cless+'</td><td>'+item.tpe_is_bt+'</td>' +
                         '<td>'+item.tpe_is_gprs+'</td><td>'+item.tpe_is_wifi+'</td><td>'+jtem.software_apn+'</td>' +
-                        '<td>'+jtem.software_login+'</td><td>'+jtem.software_pwd+'</td></tr>')
+                        '<td>'+jtem.software_login+'</td><td>'+jtem.software_pwd+'</td></tr>');
+
+                    $("#"+item.tpe_id).on('click',function(){
+                        console.log('toto');
+                    });
                 });
-                });
+            });
             $(".modalLoading").hide();
         },
         beforeSend: function(){
@@ -38,11 +41,6 @@ $(".clientRow").on('click',function(){
         error: function(){
             $(".modalLoading").hide();
         }
-
-
     })
 });
 
-$(".rowResult").on('click',function(){
-   /*console.log('toto');*/
-});

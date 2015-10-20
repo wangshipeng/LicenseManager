@@ -37,13 +37,13 @@ class sendKeyService
 
         if($key)
             return[
-                'szKey' => $key->getKey(),
                 'cless' => $isCless,
+                'szKey' => $key->getKey(),
             ];
         else
             return[
+                'cless' => 'error',
                 'szKey' => "error",
-                'cless' => $isCless,
             ];
     }
 }

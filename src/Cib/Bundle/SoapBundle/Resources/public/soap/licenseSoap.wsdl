@@ -70,8 +70,8 @@
     </message>
 
     <message name="sendKeyResponse">
-        <part name="szKey" type="xsd:string"/>
         <part name="cless" type="xsd:string"/>
+        <part name="szKey" type="xsd:string"/>
     </message>
 
     <service name="sendLicense_Service">
