@@ -31,12 +31,12 @@ class Key
     private $keyId;
 
     /**
-     * @ORM\Column(name="label", type="string",nullable=true);
+     * @ORM\Column(name="chip", type="string",nullable=true);
      */
-    private $key;
+    private $chipKey;
 
     /**
-     * @ORM\Column(name="isCless", type="boolean");
+     * @ORM\Column(name="cless", type="string", nullable=true);
      */
     private $clessKey;
 
@@ -55,28 +55,6 @@ class Key
         return $this->keyId;
     }
 
-    /**
-     * Set key
-     *
-     * @param string $key
-     * @return Key
-     */
-    public function setKey($key)
-    {
-        $this->key = $key;
-
-        return $this;
-    }
-
-    /**
-     * Get key
-     *
-     * @return string 
-     */
-    public function getKey()
-    {
-        return $this->key;
-    }
 
     /**
      * Set clessKey
@@ -122,5 +100,28 @@ class Key
     public function getNumTpe()
     {
         return $this->numTpe;
+    }
+
+    /**
+     * Set chipKey
+     *
+     * @param string $chipKey
+     * @return Key
+     */
+    public function setChipKey($chipKey)
+    {
+        $this->chipKey = $chipKey;
+
+        return $this;
+    }
+
+    /**
+     * Get chipKey
+     *
+     * @return string 
+     */
+    public function getChipKey()
+    {
+        return $this->chipKey;
     }
 }

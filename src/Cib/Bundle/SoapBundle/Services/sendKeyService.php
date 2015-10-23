@@ -30,20 +30,20 @@ class sendKeyService
 
         $key = $this->entityManager->getRepository('CibSoapBundle:Key')->findOneBy(array('numTpe' => $szNumTpe));
 
-        if($key && $key->getClessKey())
-            $isCless = "1";
-        else
-            $isCless = "0";
+//        if($key && $key->getClessKey())
+//            $isCless = "1";
+//        else
+//            $isCless = "0";*/
 
         if($key)
             return[
-                'cless' => $isCless,
-                'szKey' => $key->getKey(),
+                'cless' => $key->getClessKey(),
+                'chip' => $key->getChipKey(),
             ];
         else
             return[
                 'cless' => 'error',
-                'szKey' => "error",
+                'chip' => 'error',
             ];
     }
 }

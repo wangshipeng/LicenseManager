@@ -71,7 +71,7 @@
 
     <message name="sendKeyResponse">
         <part name="cless" type="xsd:string"/>
-        <part name="szKey" type="xsd:string"/>
+        <part name="chip" type="xsd:string"/>
     </message>
 
     <service name="sendLicense_Service">
